@@ -1,0 +1,175 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.8f1 (507919d4fff5) revision 5273881'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro Education; OS build 19043.1288; Version 2009; 64bit' Language: 'pt' Physical Memory: 3792 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Users\Danie\Documents\Unity Patchs\2020.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+58382
+Successfully changed project path to: C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
+C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 148.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.8f1 (507919d4fff5)
+[Subsystems] Discovering subsystems at path C:/Users/Danie/Documents/Unity Patchs/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Danie/Documents/GitHub/CSJ-Top-Down/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics (ID=0xa06)
+    Vendor:   
+    VRAM:     1896 MB
+    Driver:   20.19.15.5171
+Initialize mono
+Mono path[0] = 'C:/Users/Danie/Documents/Unity Patchs/2020.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/Danie/Documents/Unity Patchs/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Users/Danie/Documents/Unity Patchs/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56356
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/Danie/Documents/Unity Patchs/2020.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Users/Danie/Documents/Unity Patchs/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.012429 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 189.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 10.864 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005522 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 151.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.636 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.35 seconds
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.2 MB.
+System memory in use after: 85.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2250.
+Total: 13.018400 ms (FindLiveObjects: 0.971100 ms CreateObjectMapping: 0.283400 ms MarkObjects: 10.659100 ms  DeleteObjects: 1.101300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Sprites/SUNNYSIDEWORLD_UI_V1.0
+  artifactKey: Guid(cbfe0539ece517b4ea28bd19a0514ade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDEWORLD_UI_V1.0 using Guid(cbfe0539ece517b4ea28bd19a0514ade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dda9ccae10f08e2e990a122a54b3df7') in 0.114061 seconds
+  Import took 0.122260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000522 seconds.
+  path: Assets/Sprites
+  artifactKey: Guid(43e1da1fe2c87214e96d20b5c7fd9a94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites using Guid(43e1da1fe2c87214e96d20b5c7fd9a94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4839e01ba31130e02093d9fd5cbff461') in 0.081059 seconds
+  Import took 0.099713 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001252 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_CHIMNEYSMOKE
+  artifactKey: Guid(cbf0cf9dce9760143825266930d05c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_CHIMNEYSMOKE using Guid(cbf0cf9dce9760143825266930d05c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e1ba75600eff16f5260420cc26a7de8') in 0.076301 seconds
+  Import took 0.085665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png
+  artifactKey: Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png using Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf06d494427973d32ccdd742a49b38c') in 0.658042 seconds
+  Import took 0.666256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000462 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_BUILDINGS_V0.01.png
+  artifactKey: Guid(e2699b3f51221514b9ac6d7fda440d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_BUILDINGS_V0.01.png using Guid(e2699b3f51221514b9ac6d7fda440d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02268d2235d04e54e933e2cf1831fce0') in 0.143295 seconds
+  Import took 0.165765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001260 seconds.
+  path: Assets/Sprites/Houses_props.png
+  artifactKey: Guid(2685081189d28f94a84041d04cfdcabf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Houses_props.png using Guid(2685081189d28f94a84041d04cfdcabf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6af9832a9c625ef7c174eafb90a119a5') in 0.134463 seconds
+  Import took 0.160383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000445 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET
+  artifactKey: Guid(34bb25483f265434cb05c75fe6879b2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET using Guid(34bb25483f265434cb05c75fe6879b2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61b073300595f50d9e0c259eca448fd4') in 0.092268 seconds
+  Import took 0.109228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000511 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2
+  artifactKey: Guid(f58279c57e5e4a640a6a9f0112f92ba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2 using Guid(f58279c57e5e4a640a6a9f0112f92ba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '240d06e114ddd0bb8a41ac6ac42e3fc0') in 0.133175 seconds
+  Import took 0.224841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000428 seconds.
+  path: Assets/Sprites/Example Scene.png
+  artifactKey: Guid(cf8fc7cfc9ef0614683ec27e40040945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Example Scene.png using Guid(cf8fc7cfc9ef0614683ec27e40040945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8fcd3c04b8fb3869d043dad5da71407') in 0.232298 seconds
+  Import took 0.241832 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000423 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_CHARACTERS_PARTS_V0.3.1
+  artifactKey: Guid(0461d21e684caf74eac3ec9d4930f35c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_CHARACTERS_PARTS_V0.3.1 using Guid(0461d21e684caf74eac3ec9d4930f35c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79237e7b724f848b3a34571e455155f3') in 0.116892 seconds
+  Import took 0.128337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.558360 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png
+  artifactKey: Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png using Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7d0732bb2b1a9ddbaa2b263fbda4499') in 0.362796 seconds
+  Import took 0.384736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.835238 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png
+  artifactKey: Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png using Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13f28d6a43d0cb290b9a865fcb93ece') in 0.216468 seconds
+  Import took 0.242279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 125.931742 seconds.
+  path: Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png
+  artifactKey: Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/SUNNYSIDE_WORLD_ASSETS_V0.2/TILESET/SunnysideWorld_Tileset_V0.1.png using Guid(54a44e86b7db06847b956fb9e6007e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '704ebbbc4e5c41059241b76dbcb7dc32') in 3.921612 seconds
+  Import took 4.061651 seconds .
+
