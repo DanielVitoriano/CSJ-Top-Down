@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e186e3b95faf5b46a45d11fe4df5e15, type: 3}
   m_Name: NPC_1
   m_EditorClassIdentifier: 
-  actor: {fileID: 0}
+  actor: {fileID: 4799331562801423480, guid: 4e26f4c7577f0bf4eb7a780a841d0e6e, type: 3}
   speakerSprite: {fileID: 0}
   sentence: 
-  dialogues: []
+  dialogues:
+  - actorName: 
+    profile: {fileID: 0}
+    sentence:
+      portuguese: Oi,meu chapa! Vou te devorar igual tartaruga!
+      english: 
+      spanish: 

@@ -20,6 +20,12 @@ public class Dialogue_controller : MonoBehaviour
     private int index;
     private string[] sentences;
 
+    public static Dialogue_controller instance;
+
+    private void Awake(){
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
