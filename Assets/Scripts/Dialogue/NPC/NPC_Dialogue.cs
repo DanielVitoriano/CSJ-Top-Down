@@ -40,7 +40,21 @@ public class NPC_Dialogue : MonoBehaviour
 
     private void get_npc_info(){
         for(int c = 0; c < dialogue.dialogues.Count; c++){
-            sentences.Add(dialogue.dialogues[c].sentence.portuguese);
+            switch(Dialogue_controller.instance.languages){
+                case Dialogue_controller.language.pt:
+                    sentences.Add(dialogue.dialogues[c].sentence.portuguese);
+                    break;
+
+                case Dialogue_controller.language.eng:
+                    sentences.Add(dialogue.dialogues[c].sentence.english);
+                    break;
+                
+                case Dialogue_controller.language.spa:
+                    sentences.Add(dialogue.dialogues[c].sentence.spanish);
+                    break;
+            }   
         }
+
+        
     }
 }

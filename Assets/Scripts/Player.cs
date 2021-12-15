@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private Vector2 _direction;
     private bool _isRunning = false;
     private bool _isRolling = false;
+    private bool _isCutting = false;
     private Rigidbody2D rig;
 
     // Start is called before the first frame update
@@ -48,7 +49,20 @@ public class Player : MonoBehaviour
         set { _isRolling = value;}
     }
 
+    public bool IsCutting { get => _isCutting; set => _isCutting = value; }
+
     #region Movement
+
+    void onCutting(){
+        if(Input.GetMouseButtonDown(0)){
+            IsCutting = true;
+            speed = 0;
+        }
+        if(Input.GetMouseButtonUp(0)){
+            IsCutting = false;
+            speed = initial_speed;
+        }
+    }
 
     void OnInput(){
         _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));

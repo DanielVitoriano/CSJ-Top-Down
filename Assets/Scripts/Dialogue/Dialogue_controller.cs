@@ -1,10 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Dialogue_controller : MonoBehaviour
 {
+
+    [System.Serializable]
+    public enum language{
+        pt, eng, spa
+    }
+    public language languages;
 
     [Header("COMPONENTS")]
     public GameObject dialogueObj;
@@ -21,6 +26,8 @@ public class Dialogue_controller : MonoBehaviour
     private string[] sentences;
 
     public static Dialogue_controller instance;
+
+    public bool IsShowing { get => isShowing; set => isShowing = value; }
 
     private void Awake(){
         instance = this;
@@ -46,14 +53,27 @@ public class Dialogue_controller : MonoBehaviour
     }
 
     public void NextSentence(){ //próxima frase
-
+        if(speechText.text == sentences[index]){
+            if(index < sentences.Length - 1){
+                index++;
+                speechText.text = "";
+                StartCoroutine(typeSentences());
+            }
+            else{//termina os textos
+                speechText.text = "";
+                index = 0;
+                dialogueObj.SetActive(false);
+                sentences = null;
+                IsShowing = false;
+            }
+        }
     }
     public void Speech(string[] txt){ //falar com npc
-    if(!isShowing){
+    if(!IsShowing){
         dialogueObj.SetActive(true);
         sentences = txt;
         StartCoroutine(typeSentences());
-        isShowing = true;
+        IsShowing = true;
     }
 
     }

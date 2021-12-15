@@ -16,9 +16,15 @@ MonoBehaviour:
   speakerSprite: {fileID: 0}
   sentence: 
   dialogues:
-  - actorName: 
+  - actorName: Tita
     profile: {fileID: 0}
     sentence:
-      portuguese: Oi,meu chapa! Vou te devorar igual tartaruga!
-      english: 
-      spanish: 
+      portuguese: Bom dia, elfo!
+      english: Good Morning, elf!
+      spanish: Buenos dias, pequenito!
+  - actorName: Daniel
+    profile: {fileID: 0}
+    sentence:
+      portuguese: Bom dia, Tita!
+      english: Good Morning, big woman!
+      spanish: Buenos dias, xuxuzito!
