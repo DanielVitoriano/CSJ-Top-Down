@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float run_speed;
+    private int handlingObj;
     private float initial_speed;
     private Vector2 _direction;
     private bool _isRunning = false;
     private bool _isRolling = false;
     private bool _isCutting = false;
+    private bool _isDigging = false;
     private Rigidbody2D rig;
 
     // Start is called before the first frame update
@@ -24,9 +26,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        setHandling();
         OnInput();
         OnRolling();
         OnRun();
+        OnCutting();
+    }
+
+    void setHandling(){
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            handlingObj = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            handlingObj = 2;
+        }
     }
 
     void FixedUpdate() {
@@ -49,17 +64,29 @@ public class Player : MonoBehaviour
         set { _isRolling = value;}
     }
 
-    public bool IsCutting { get => _isCutting; set => _isCutting = value; }
+    public bool isCutting { get => _isCutting; set => _isCutting = value; }
+    public bool isDigging { get => _isDigging; set => _isDigging = value; }
 
     #region Movement
 
-    void onCutting(){
+       void OnDigging(){
         if(Input.GetMouseButtonDown(0)){
-            IsCutting = true;
+            isDigging = true;
             speed = 0;
         }
         if(Input.GetMouseButtonUp(0)){
-            IsCutting = false;
+            isDigging = false;
+            speed = initial_speed;
+        }
+    }
+
+    void OnCutting(){
+        if(Input.GetMouseButtonDown(0)){
+            isCutting = true;
+            speed = 0;
+        }
+        if(Input.GetMouseButtonUp(0)){
+            isCutting = false;
             speed = initial_speed;
         }
     }
