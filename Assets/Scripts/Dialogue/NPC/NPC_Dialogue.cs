@@ -15,7 +15,7 @@ public class NPC_Dialogue : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.E)){
+        if(Input.GetKeyDown(KeyCode.E) && player_hit){
             Dialogue_controller.instance.Speech(sentences.ToArray());
         }
     }

@@ -37,7 +37,7 @@ public class wood : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
-            other.GetComponent<PlayerItens>().Woods ++;
+            other.GetComponent<PlayerItens>().setWood(1);
             Destroy(gameObject);
         }
     }

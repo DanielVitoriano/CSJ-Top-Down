@@ -6,6 +6,7 @@ TagManager:
   tags:
   - axe
   - wood
+  - Shovel
   layers:
   - Default
   - TransparentFX

@@ -5,8 +5,19 @@ using UnityEngine;
 public class PlayerItens : MonoBehaviour
 {
 
-    private int woods;
+    public float woods;
+    public float water;
 
-    public int Woods { get => woods; set => woods = value; }
+    [SerializeField] private float waterLimit;
+    [SerializeField] private float woodLimit;
+
+    public void setWater(float increase){
+        water += increase;
+        if(water > waterLimit){ water -= (water - waterLimit);}
+    }
+    public void setWood(float increase){
+        this.woods += increase;
+        if(woods > woodLimit){ woods -= (woods - woodLimit);}
+    }
 
 }

@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float run_speed;
     private int handlingObj;
+    private PlayerItens playerItens;
     private float initial_speed;
     private Vector2 _direction;
     private bool _isRunning = false;
     private bool _isRolling = false;
     private bool _isCutting = false;
     private bool _isDigging = false;
+    private bool _isWatering = false;
     private Rigidbody2D rig;
 
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         initial_speed = speed;
+        playerItens = GetComponent<PlayerItens>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,8 @@ public class Player : MonoBehaviour
         OnRolling();
         OnRun();
         OnCutting();
+        OnDigging();
+        OnWatering();
     }
 
     void setHandling(){
@@ -38,9 +43,13 @@ public class Player : MonoBehaviour
         {
             handlingObj = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             handlingObj = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            handlingObj = 3;
         }
     }
 
@@ -66,28 +75,51 @@ public class Player : MonoBehaviour
 
     public bool isCutting { get => _isCutting; set => _isCutting = value; }
     public bool isDigging { get => _isDigging; set => _isDigging = value; }
+    public bool isWatering { get => _isWatering; set => _isWatering = value; }
 
     #region Movement
 
-       void OnDigging(){
-        if(Input.GetMouseButtonDown(0)){
-            isDigging = true;
-            speed = 0;
+    
+    void OnWatering(){
+        if(handlingObj == 3){
+            if(Input.GetMouseButtonDown(0) && playerItens.water > 0){
+                isWatering = true;
+                speed = 0;
+            }
+            if(Input.GetMouseButtonUp(0) && playerItens.water < 0){
+                isWatering = false;
+                speed = initial_speed;
+            }
+            if(isWatering){
+                playerItens.setWater(-0.01f);
+            }
         }
-        if(Input.GetMouseButtonUp(0)){
-            isDigging = false;
-            speed = initial_speed;
+    }
+
+
+    void OnDigging(){
+        if(handlingObj == 2){
+            if(Input.GetMouseButtonDown(0)){
+                isDigging = true;
+                speed = 0;
+            }
+            if(Input.GetMouseButtonUp(0)){
+                isDigging = false;
+                speed = initial_speed;
+            }
         }
     }
 
     void OnCutting(){
-        if(Input.GetMouseButtonDown(0)){
+        if(handlingObj == 1){
+            if(Input.GetMouseButtonDown(0)){
             isCutting = true;
             speed = 0;
         }
-        if(Input.GetMouseButtonUp(0)){
-            isCutting = false;
-            speed = initial_speed;
+            if(Input.GetMouseButtonUp(0)){
+                isCutting = false;
+                speed = initial_speed;
+            }
         }
     }
 

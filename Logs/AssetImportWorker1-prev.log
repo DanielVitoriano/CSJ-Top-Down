@@ -15,7 +15,19 @@ C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59624
+54679
 Successfully changed project path to: C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
 C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
 Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 2070.00 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.23f1 (b50729e604a9)
+[Subsystems] Discovering subsystems at path C:/Users/Danie/Documents/Unity Patchs/2021.1.23f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Danie/Documents/GitHub/CSJ-Top-Down/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics (ID=0xa06)
+    Vendor:   Intel
+    VRAM:     1896 MB
+    Driver:   20.19.15.5171

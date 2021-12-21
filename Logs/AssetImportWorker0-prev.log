@@ -15,11 +15,11 @@ C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59624
+54679
 Successfully changed project path to: C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
 C:/Users/Danie/Documents/GitHub/CSJ-Top-Down
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 282.20 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 193.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.23f1 (b50729e604a9)
 [Subsystems] Discovering subsystems at path C:/Users/Danie/Documents/Unity Patchs/2021.1.23f1/Editor/Data/Resources/UnitySubsystems
@@ -35,5 +35,5 @@ Initialize mono
 Mono path[0] = 'C:/Users/Danie/Documents/Unity Patchs/2021.1.23f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Users/Danie/Documents/Unity Patchs/2021.1.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Users/Danie/Documents/Unity Patchs/2021.1.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56872
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56920
 Begin MonoManager ReloadAssembly
