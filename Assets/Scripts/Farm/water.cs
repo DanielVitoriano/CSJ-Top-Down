@@ -8,7 +8,7 @@ public class water : MonoBehaviour
     [SerializeField]
     private int waterIncrease;
     private PlayerItens playerItens;
-    [SerializeField] private bool detectingPlayer;
+    private bool detectingPlayer;
 
     public int WaterIncrease { get => waterIncrease; set => waterIncrease = value; }
 

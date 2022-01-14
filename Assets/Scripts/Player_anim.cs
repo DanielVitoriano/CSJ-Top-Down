@@ -6,10 +6,13 @@ public class Player_anim : MonoBehaviour
 {
     private Animator anim;
     private Player player;
+    private fishing fishing;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         player = GetComponent<Player>();
+        fishing = FindObjectOfType<fishing>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,23 @@ public class Player_anim : MonoBehaviour
             anim.SetInteger("transition", 2);
         }
     }
+    public void OnFishingStarted(){
+        anim.SetTrigger("isFishing");
+        player.isPaused = true;
+    }
+    private void OnFishingEnd(){
+        fishing.OnFishing();
+        player.isPaused = false;
+    }
 
+    public void OnHammeringStarted(){
+        anim.SetBool("Hammering", true);
+        player.isPaused = true;
+    }
+    
+    public void OnHammeringEnded(){
+        anim.SetBool("Hammering", false);
+        player.isPaused = false;
+    }
     #endregion
 }

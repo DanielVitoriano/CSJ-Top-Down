@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public bool isPaused;
     [SerializeField] private float speed;
     [SerializeField] private float run_speed;
     private int handlingObj;
@@ -17,6 +17,11 @@ public class Player : MonoBehaviour
     private bool _isDigging = false;
     private bool _isWatering = false;
     private Rigidbody2D rig;
+    private HUD_Controler hud_controler;
+
+    private void Awake() {
+        hud_controler = FindObjectOfType<HUD_Controler>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,32 +34,40 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setHandling();
-        OnInput();
-        OnRolling();
-        OnRun();
-        OnCutting();
-        OnDigging();
-        OnWatering();
+        if(!isPaused){
+            setHandling();
+            OnInput();
+            OnRolling();
+            OnRun();
+            OnCutting();
+            OnDigging();
+            OnWatering();
+        }
     }
 
     void setHandling(){
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            handlingObj = 1;
+            handlingObj = 0;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            handlingObj = 2;
+            handlingObj = 1;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            handlingObj = 3;
+            handlingObj = 2;
         }
+        hud_controler.setSelectIten(handlingObj);
+    }
+    public int GetHandling(){
+        return handlingObj;
     }
 
     void FixedUpdate() {
-         OnMove();
+        if(!isPaused){
+            OnMove();
+        }
     }
 
     public Vector2 direction
@@ -81,12 +94,12 @@ public class Player : MonoBehaviour
 
     
     void OnWatering(){
-        if(handlingObj == 3){
-            if(Input.GetMouseButtonDown(0) && playerItens.water > 0){
+        if(handlingObj == 2){
+            if(Input.GetMouseButtonDown(0) && playerItens.Water > 0){
                 isWatering = true;
                 speed = 0;
             }
-            if(Input.GetMouseButtonUp(0) && playerItens.water < 0){
+            if(Input.GetMouseButtonUp(0)){
                 isWatering = false;
                 speed = initial_speed;
             }
@@ -98,7 +111,7 @@ public class Player : MonoBehaviour
 
 
     void OnDigging(){
-        if(handlingObj == 2){
+        if(handlingObj == 1){
             if(Input.GetMouseButtonDown(0)){
                 isDigging = true;
                 speed = 0;
@@ -111,7 +124,7 @@ public class Player : MonoBehaviour
     }
 
     void OnCutting(){
-        if(handlingObj == 1){
+        if(handlingObj == 0){
             if(Input.GetMouseButtonDown(0)){
             isCutting = true;
             speed = 0;
