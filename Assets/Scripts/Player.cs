@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private int SwordDamage;
+    [SerializeField] private int health;
     public bool isPaused;
     [SerializeField] private float speed;
     [SerializeField] private float run_speed;
@@ -18,6 +20,7 @@ public class Player : MonoBehaviour
     private bool _isWatering = false;
     private Rigidbody2D rig;
     private HUD_Controler hud_controler;
+    private bool isAttacking;
 
     private void Awake() {
         hud_controler = FindObjectOfType<HUD_Controler>();
@@ -42,6 +45,24 @@ public class Player : MonoBehaviour
             OnCutting();
             OnDigging();
             OnWatering();
+            OnAttack();
+        }
+    }
+    public void OnHit(int damage){
+        health -= damage;
+        Debug.Log(health);
+    }
+
+    public void OnAttack(){
+        if(handlingObj == 3){
+            if(Input.GetMouseButtonDown(0) && !IsAttacking){
+                isAttacking = true;
+                speed = 0; 
+            }
+            if(Input.GetMouseButtonUp(0)){
+                isAttacking = false;
+                speed = initial_speed;
+            }
         }
     }
 
@@ -57,6 +78,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             handlingObj = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            handlingObj = 3;
         }
         hud_controler.setSelectIten(handlingObj);
     }
@@ -89,10 +114,13 @@ public class Player : MonoBehaviour
     public bool isCutting { get => _isCutting; set => _isCutting = value; }
     public bool isDigging { get => _isDigging; set => _isDigging = value; }
     public bool isWatering { get => _isWatering; set => _isWatering = value; }
+    public bool IsAttacking { get => IsAttacking1; set => IsAttacking1 = value; }
+    public bool IsAttacking1 { get => isAttacking; set => isAttacking = value; }
+    public int SwordDamage1 { get => SwordDamage; set => SwordDamage = value; }
 
     #region Movement
 
-    
+
     void OnWatering(){
         if(handlingObj == 2){
             if(Input.GetMouseButtonDown(0) && playerItens.Water > 0){

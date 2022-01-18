@@ -7,6 +7,12 @@ public class Player_anim : MonoBehaviour
     private Animator anim;
     private Player player;
     private fishing fishing;
+    private bool isHurt;
+    private float timeCount;
+    private float recoveryTime = 1f;
+    [SerializeField] private Transform attackPosition;
+    [SerializeField] private float radius;
+    [SerializeField] private LayerMask enemylayer;
 
     void Start()
     {
@@ -20,6 +26,34 @@ public class Player_anim : MonoBehaviour
     {
         OnMove();
         OnRun();
+
+        if(isHurt){
+            timeCount += Time.deltaTime;
+            if(timeCount >= recoveryTime){
+                isHurt = false;
+                timeCount = 0;
+            }
+        }
+
+    }
+
+    private void OnDrawGizmosSelected(){
+        Gizmos.DrawWireSphere(attackPosition.position, radius);
+    }
+
+    public void OnAttackColl(){
+        Collider2D hit = Physics2D.OverlapCircle(attackPosition.position, radius, enemylayer);
+        if(hit != null){
+            hit.GetComponentInChildren<SkeletonAnim>().OnHit(player.SwordDamage1);
+        }
+    }
+
+    public void OnHit(int damage){
+        if(!isHurt){
+            isHurt = true;
+            anim.SetTrigger("Hit");
+            player.OnHit(damage);
+        }
     }
 
     #region Movement
@@ -51,6 +85,9 @@ public class Player_anim : MonoBehaviour
         }
         if(player.isWatering){
             anim.SetInteger("transition", 5);
+        }
+        if(player.IsAttacking){
+            anim.SetInteger("transition", 6);
         }
     }
     private void OnRun(){
