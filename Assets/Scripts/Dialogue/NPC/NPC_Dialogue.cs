@@ -9,6 +9,8 @@ public class NPC_Dialogue : MonoBehaviour
     public LayerMask player;
     private bool player_hit;
     private List<string> sentences = new List<string>();
+    private List<string> actorName = new List<string>();
+    private List<Sprite> profileSprite = new List<Sprite>();
 
     private void Start() {
         get_npc_info();
@@ -16,7 +18,7 @@ public class NPC_Dialogue : MonoBehaviour
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.E) && player_hit){
-            Dialogue_controller.instance.Speech(sentences.ToArray());
+            Dialogue_controller.instance.Speech(sentences.ToArray(), actorName.ToArray(), profileSprite.ToArray());
         }
     }
     private void FixedUpdate() {
@@ -53,6 +55,10 @@ public class NPC_Dialogue : MonoBehaviour
                     sentences.Add(dialogue.dialogues[c].sentence.spanish);
                     break;
             }   
+
+            actorName.Add(dialogue.dialogues[c].actorName);
+            profileSprite.Add(dialogue.dialogues[c].profile);
+
         }
 
         

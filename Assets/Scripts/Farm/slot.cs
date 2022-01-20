@@ -11,6 +11,12 @@ public class slot : MonoBehaviour
     private int initDigAmount;
     private bool dugHole;
     [SerializeField] private bool detecting;
+    private bool plantedCarrot;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip holeSFX;
+    [SerializeField] private AudioClip carrotSFX;
 
     [Header("Componentes")]
     public SpriteRenderer sprite;
@@ -31,13 +37,18 @@ public class slot : MonoBehaviour
             if(detecting){
                 currentWater += 0.01f;
             }
-            if(currentWater >= waterAmount){
+            if(currentWater >= waterAmount && !plantedCarrot){
                 sprite.sprite = carrot;
-                if(Input.GetKeyDown(KeyCode.E)){
-                    sprite.sprite = hole;
-                    player_itens.setCarrots(1);
-                    currentWater = 0f;
-                }
+                audioSource.PlayOneShot(holeSFX);
+
+                plantedCarrot = true;
+            }
+            
+            if(Input.GetKeyDown(KeyCode.E) && plantedCarrot){
+                sprite.sprite = hole;
+                player_itens.setCarrots(1);
+                currentWater = 0f;
+                audioSource.PlayOneShot(carrotSFX);
             }
         }
     }

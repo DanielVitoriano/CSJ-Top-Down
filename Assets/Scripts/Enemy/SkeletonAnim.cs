@@ -37,7 +37,6 @@ public class SkeletonAnim : MonoBehaviour
     }
     public void OnDeath(){
         anim.SetTrigger("Death");
-        Destroy(gameObject, 1);
     }
 
     private void OnDrawGizmosSelected(){

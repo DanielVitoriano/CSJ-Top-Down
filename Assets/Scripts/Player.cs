@@ -50,7 +50,6 @@ public class Player : MonoBehaviour
     }
     public void OnHit(int damage){
         health -= damage;
-        Debug.Log(health);
     }
 
     public void OnAttack(){
@@ -135,6 +134,7 @@ public class Player : MonoBehaviour
                 playerItens.setWater(-0.01f);
             }
         }
+        else{isWatering = false;}
     }
 
 
@@ -149,6 +149,7 @@ public class Player : MonoBehaviour
                 speed = initial_speed;
             }
         }
+        else{isDigging = false;}
     }
 
     void OnCutting(){
@@ -162,6 +163,7 @@ public class Player : MonoBehaviour
                 speed = initial_speed;
             }
         }
+        else{isCutting = false;}
     }
 
     void OnInput(){
@@ -182,9 +184,11 @@ public class Player : MonoBehaviour
     }
     void OnRolling(){
         if(Input.GetMouseButtonDown(1)){
+            speed = run_speed;
             _isRolling = true;
         }
         if(Input.GetMouseButtonUp(1)){
+            speed = initial_speed;
             _isRolling = false;
         }
     }

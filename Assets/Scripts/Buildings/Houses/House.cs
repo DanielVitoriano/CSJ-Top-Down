@@ -25,7 +25,7 @@ private Player_anim player_anim;
     }
 
     private void Update() {
-        if(builded && detectingPlayer && Input.GetKeyDown(KeyCode.E) && playerItens.Woods >= woodAmount){
+        if(!builded && detectingPlayer && Input.GetKeyDown(KeyCode.E) && playerItens.Woods >= woodAmount){
             builded = true;
             playerItens.setWood(-woodAmount);
             isBegining = true;

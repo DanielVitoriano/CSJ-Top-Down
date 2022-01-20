@@ -24,6 +24,9 @@ public class Dialogue_controller : MonoBehaviour
     private bool isShowing;
     private int index;
     private string[] sentences;
+    private string[] currentActorName;
+    private Sprite[] currentProfileSprite;
+    private Player player;
 
     public static Dialogue_controller instance;
 
@@ -31,18 +34,7 @@ public class Dialogue_controller : MonoBehaviour
 
     private void Awake(){
         instance = this;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = FindObjectOfType<Player>();
     }
 
     IEnumerator typeSentences(){
@@ -62,18 +54,25 @@ public class Dialogue_controller : MonoBehaviour
             else{//termina os textos
                 speechText.text = "";
                 index = 0;
+                actorNameText.text = null;
                 dialogueObj.SetActive(false);
                 sentences = null;
                 IsShowing = false;
+                player.isPaused = false;
             }
         }
     }
-    public void Speech(string[] txt){ //falar com npc
+    public void Speech(string[] txt, string[] actorNameM, Sprite[] profileSpriteM){ //falar com npc
     if(!IsShowing){
         dialogueObj.SetActive(true);
         sentences = txt;
+        currentActorName = actorNameM;
+        currentProfileSprite = profileSpriteM;
+        profileSprite.sprite = currentProfileSprite[index];
+        actorNameText.text = currentActorName[index];
         StartCoroutine(typeSentences());
         IsShowing = true;
+        player.isPaused = true;
     }
 
     }
