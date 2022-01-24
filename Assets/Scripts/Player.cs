@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int SwordDamage;
-    [SerializeField] private int health;
+    [SerializeField] private float health;
+    private float maxHealth;
     public bool isPaused;
     [SerializeField] private float speed;
     [SerializeField] private float run_speed;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = health;
         rig = GetComponent<Rigidbody2D>();
         initial_speed = speed;
         playerItens = GetComponent<PlayerItens>();
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
     }
     public void OnHit(int damage){
         health -= damage;
+        hud_controler.SetHealthBarFillAmount(health / maxHealth);
     }
 
     public void OnAttack(){

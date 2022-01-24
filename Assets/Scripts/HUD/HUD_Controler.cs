@@ -10,6 +10,9 @@ public class HUD_Controler : MonoBehaviour
     [SerializeField] private Image carrotsUI;
     [SerializeField] private Image waterUI;
     [SerializeField] private Image fishesUI;
+    [Header("Player")]
+    [SerializeField] private Image healthBar;
+    [SerializeField] private Image staminaBar;
 
     [Header("Tools")]
     [SerializeField] List<Image> toolsUI = new List<Image>();
@@ -47,6 +50,13 @@ public class HUD_Controler : MonoBehaviour
             if(selectedIten == x) toolsUI[x].color = selectedItenColor;
             else toolsUI[x].color = unnselectItenColor;
         }
+    }
+
+    public void SetHealthBarFillAmount(float value){
+        healthBar.fillAmount = value;
+    }
+    public void SetStaminaBarFillAmount(float value){
+        staminaBar.fillAmount = value;
     }
 
 }
